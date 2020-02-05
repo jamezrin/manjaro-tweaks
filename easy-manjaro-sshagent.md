@@ -44,7 +44,7 @@ sudo pacman -S gnome-keyring libsecret seahorse
 
 I only had to do one thing to make it work, which is copying a snippet of bash script in my `.bash_profile` and my `.zshenv` files, so that when I use ssh through the terminal they know of the SSH agent instance.
 
-Add this to both of these files (`.bash_profile` and `.zshenv`)
+Add this to both of these files (`.bash_profile` and `.zshenv`, the latter is if you use zsh, of course)
 
 ```bash
 if [ -n "$DESKTOP_SESSION" ]; then
