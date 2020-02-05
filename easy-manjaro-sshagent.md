@@ -11,6 +11,15 @@ For future reference, I tried the following configurations:
 
 - Using `ssh-agent` through a systemd user unit, and adding a variable to `.pam_environment`. Didn't even work.
 
+- Using `ssh-agent` through a systemd user unit, and adding some variables to `~/.config/plasma-workspace/env/ssh-agent.sh`. Worked, stayed with this for a while. Some programs didn't like this and required me to open a terminal and do something with ssh beforehand. This is what I did in that file:
+
+    ```bash
+    #!/bin/sh
+
+    export SSH_ASKPASS='/usr/bin/ksshaskpass'
+    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+    ```
+
 - Using `keychain` and `x11-ssh-askpass`. Don't. Just don't. It's ugly as fuck.
 
 - Using `kwallet` with `ssh-agent` running on a systemd user unit. Very bad experience.
