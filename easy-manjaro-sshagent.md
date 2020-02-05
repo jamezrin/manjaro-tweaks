@@ -42,7 +42,9 @@ sudo pacman -S gnome-keyring libsecret seahorse
 
 ### Configuring
 
-I only had to do one thing to make it work, which is copying a snippet of bash script in my `.bash_profile` and my `.zshenv` files, so that when I use ssh through the terminal they know of the SSH agent instance.
+I only had to do two things to make it work, one is copying a snippet of bash script in my `.bash_profile` and my `.zshenv` files, so that when I use ssh through the terminal they know of the SSH agent instance. The other is adding a small configuration to `~/.ssh/config` so that keys are added to the agent automatically.
+
+#### First configuration
 
 Add this to both of these files (`.bash_profile` and `.zshenv`, the latter is if you use zsh, of course)
 
@@ -61,7 +63,18 @@ if test -n "$DESKTOP_SESSION"
 end
 ```
 
-Obviously, make sure you remove any configuration you have done previously, otherwise there might be conflicts between SSH agents.
+Obviously, make sure you remove any configuration of the same kind (that modify `SSH_AUTH_SOCK`) you have done previously, otherwise there might be conflicts between SSH agents.
+
+#### Second configuration
+
+Add the following to `~/.ssh/config`
+
+```text
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
+```
 
 You can add these changes to the files in `/etc/skel` and the next time you create a user, they will have these files configured by default.
 
