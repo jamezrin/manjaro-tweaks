@@ -5,6 +5,6 @@ In this repository I create guides for fixing or adding things that are useful w
 List of guides:
 
 - [My perfect SSH Agent configuration](./easy-manjaro-sshagent.md)
-- [TODO: Fix Visual Studio Code freezing when deleting](./electron-trash-fix.md)
+- [Fix Visual Studio Code freezing when deleting](./electron-trash-fix.md)
 - [TODO: Fix missing libtinfo.so.5 library](./missing-libtinfo.so.5.md)
 - [TODO: My zsh config](./zsh-config.md)
