@@ -6,5 +6,5 @@ List of guides:
 
 - [My perfect SSH Agent configuration](./easy-manjaro-sshagent.md)
 - [Fix Visual Studio Code freezing when deleting](./electron-trash-fix.md)
-- [TODO: Fix missing libtinfo.so.5 library](./missing-libtinfo.so.5.md)
-- [TODO: My zsh config](./zsh-config.md)
+- [Fix missing libtinfo.so.5 library](./missing-libtinfo.so.5.md)
+
